@@ -3,9 +3,10 @@ import csv
 import cv2
 import evaluate
 import detector
+import sys
 
 if __name__ == "__main__":
-	with open('cats.csv', newline='') as csvfile:
+	with open('labels.csv', newline='') as csvfile:
 		reader = csv.reader(csvfile, delimiter = ',')
 		for data in reader:
 			filename = data[0]
@@ -23,7 +24,7 @@ if __name__ == "__main__":
 			detect_x2 = int(detect_coords[2])
 			detect_y2 = int(detect_coords[3])
 
-		# loop over the cat faces and draw a rectangle surrounding each
+			# loop over the cat faces and draw a rectangle surrounding each
 			image = cv2.imread(filename)
 			cv2.rectangle(image, (actual_x1, actual_y1), (actual_x2, actual_y2), (0, 0, 255), 2)
 			# cv2.putText(image, "Cat #{}".format(i + 1), (x, y - 10),

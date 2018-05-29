@@ -46,6 +46,8 @@ def evaluate(boxA, boxB):
 	return iou
 
 if __name__ == "__main__":
+	count = 0
+	sumscore = 0
 	with open('labels.csv', newline='') as csvfile:
 		reader = csv.reader(csvfile, delimiter = ',')
 		for data in reader:
@@ -70,6 +72,11 @@ if __name__ == "__main__":
 			cv2.rectangle(image, (detect_x1, detect_y1), (detect_x2, detect_y2), (0, 0, 255), 2) # PREDICTED BOUNDING BOX
 			cv2.putText(image, "IOU: {}%".format(round(score,4) * 100), (min(actual_x1, detect_x1), min(actual_y1,detect_y1) - 10),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
+
+			# Printing IoU scores
+			sumscore += score
+			count += 1
+			print("File: "+filename+"\tIoU Score: "+str(score)+"\tAverage: "+str((sumscore)/(count)))
 
 			# show the detected cat faces
 			cv2.imshow("Cat Faces", image)

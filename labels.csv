@@ -5,7 +5,7 @@ labels/cat_04.png,0,0,0,0
 labels/cat_05.jpg,113,99,253,227
 labels/cat_06.jpg,130,102,281,252
 labels/cat_07.jpg,298,148,484,323
-labels/cat_08.jpg,688,309,986,580
+labels/cat_08.jpg,429,170,739,378
 labels/cat_09.jpg,82,115,265,298
 labels/cat_10.jpg,43,67,157,167
 labels/cat_11.jpg,310,138,462,294
@@ -16,5 +16,5 @@ labels/cat_15.jpg,110,187,255,309
 labels/cat_16.jpg,119,42,207,127
 labels/cat_17.jpg,235,99,415,260
 labels/cat_18.jpg,56,79,236,235
-labels/cat_19.jpg,440,155,711,375
+labels/cat_19.jpg,0,0,0,0
 labels/cat_20.jpg,245,70,369,179

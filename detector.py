@@ -3,9 +3,7 @@ import cv2
 import csv
 import os.path
 import sys
- 
-# FOR DETECTOR.PY ONLY
-# usage:	python detector.py <image_path>
+
 def detects(filename):
 	# load the input image and convert it to grayscale
 	image = cv2.imread(filename)
@@ -26,7 +24,9 @@ def detects(filename):
 	# show the detected cat faces
 	cv2.imshow("Cat Faces", image)
 	cv2.waitKey(0)
+	
 
 if __name__ == "__main__":
 
+	# usage:	python detector.py <image_path>
 	detects(sys.argv[1])

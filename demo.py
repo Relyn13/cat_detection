@@ -15,6 +15,11 @@ def detect(filename):
 	rects = detector.detectMultiScale(gray, scaleFactor=1.3,
 		minNeighbors=10, minSize=(75, 75))
 
+	x1=0
+	y1=0
+	x2=0
+	y2=0
+
 	# loop over the cat faces and draw a rectangle surrounding each
 	for (i, (x, y, w, h)) in enumerate(rects):
 		x1 = x
@@ -61,8 +66,8 @@ if __name__ == "__main__":
 
 			# loop over the cat faces and draw a rectangle surrounding each
 			image = cv2.imread(filename)
-			cv2.rectangle(image, (actual_x1, actual_y1), (actual_x2, actual_y2), (0, 0, 255), 2)
-			cv2.rectangle(image, (detect_x1, detect_y1), (detect_x2, detect_y2), (0, 255, 0), 2)
+			cv2.rectangle(image, (actual_x1, actual_y1), (actual_x2, actual_y2), (0, 255, 0), 2) # CORRECT BOUNDING BOX
+			cv2.rectangle(image, (detect_x1, detect_y1), (detect_x2, detect_y2), (0, 0, 255), 2) # PREDICTED BOUNDING BOX
 			cv2.putText(image, "IOU: {}%".format(round(score,4) * 100), (min(actual_x1, detect_x1), min(actual_y1,detect_y1) - 10),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
 
